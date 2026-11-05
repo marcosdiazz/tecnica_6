@@ -1,0 +1,123 @@
+:root {
+  --azul: #14284b;
+  --azul-claro: #223d6b;
+  --oro: #f0a81c;
+  --naranja: #e2561b;
+  --papel: #ffffff;
+  --gris: #eef1f6;
+  --texto: #1d2433;
+  --ancho: 1040px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--papel);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--azul-claro); }
+a:focus-visible, .boton:focus-visible { outline: 3px solid var(--oro); outline-offset: 3px; }
+
+h1, h2, h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0 0 .6em;
+}
+
+/* Barra superior */
+.barra {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: .5rem 1.5rem;
+  padding: .6rem clamp(1rem, 4vw, 2.5rem);
+  background: var(--azul);
+  border-bottom: 4px solid var(--oro);
+}
+.marca {
+  display: flex; align-items: center; gap: .75rem;
+  color: #fff; text-decoration: none;
+  font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 1.4rem;
+}
+.marca img { width: 40px; height: auto; }
+.barra nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+.barra nav a { color: #dce4f2; text-decoration: none; padding: .25rem 0; font-weight: 600; }
+.barra nav a:hover { color: var(--oro); }
+
+/* Portada */
+.hero {
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+  padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1rem, 6vw, 5rem);
+  background: var(--azul);
+  color: #fff;
+}
+.hero-texto { max-width: 38rem; }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
+.hero p { color: #dce4f2; max-width: 34rem; }
+.hero-escudo { width: clamp(120px, 20vw, 220px); flex-shrink: 0; }
+
+.botones { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.boton {
+  display: inline-block; padding: .7rem 1.4rem;
+  background: var(--oro); color: var(--azul);
+  font-weight: 600; text-decoration: none; border-radius: 4px;
+}
+.boton:hover { background: #ffbf3f; }
+.boton.claro { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px #fff; }
+.boton.claro:hover { background: rgba(255,255,255,.12); }
+
+/* Foto */
+.foto { margin: 0; background: var(--azul); }
+.foto img { width: 100%; max-height: 520px; object-fit: cover; object-position: center 55%; }
+.foto figcaption { padding: .6rem clamp(1rem, 6vw, 5rem); font-size: .95rem; color: #dce4f2; }
+
+/* Secciones */
+.seccion { padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 6vw, 5rem); }
+.seccion > * { max-width: var(--ancho); margin-left: auto; margin-right: auto; }
+.seccion.fondo { background: var(--gris); }
+.seccion h2 { font-size: clamp(2rem, 4.5vw, 3rem); color: var(--azul); max-width: 22ch; }
+.intro { max-width: 40rem; }
+.nota { font-size: 1rem; color: #4d576b; margin-top: 1.5rem; max-width: 40rem; }
+
+/* Orientaciones */
+.dos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.orientacion { padding-left: 1.25rem; border-left: 6px solid var(--naranja); }
+.orientacion:nth-child(2) { border-left-color: var(--oro); }
+.orientacion h3 { font-size: 2rem; color: var(--azul); margin-bottom: .3em; }
+.orientacion p { margin: 0; max-width: 32rem; }
+
+/* Tabla de horarios */
+.tabla-caja { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; max-width: 34rem; background: #fff; }
+th, td { text-align: left; padding: .9rem 1.1rem; border-bottom: 1px solid #d3d9e5; }
+thead th { background: var(--azul); color: #fff; font-weight: 600; }
+tbody th { color: var(--azul); }
+
+/* La escuela / contacto */
+.columnas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem 3rem; align-items: start; }
+.datos { margin: 0; }
+.datos div { padding: .7rem 0; border-bottom: 1px solid #d3d9e5; }
+.datos dt { font-weight: 600; color: var(--azul); }
+.datos dd { margin: 0; }
+.contacto p { margin: 0 0 1.25rem; }
+.mapa { width: 100%; height: 320px; border: 0; border-radius: 4px; }
+
+/* Pie */
+.pie { padding: 1.5rem clamp(1rem, 6vw, 5rem); background: var(--azul); color: #dce4f2; text-align: center; font-size: .95rem; }
+.pie p { margin: 0; }
+
+@media (max-width: 640px) {
+  .hero { flex-direction: column-reverse; align-items: flex-start; }
+  .barra nav { gap: .25rem 1rem; font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
