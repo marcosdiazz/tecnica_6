@@ -10,7 +10,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="./estilos.css?v=2">
+  <style>
+    .galeria { padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 6vw, 5rem); background: rgba(255,255,255,.94); }
+    .galeria-cabecera { max-width: 1040px; margin: 0 auto 1.5rem; }
+    .galeria-cabecera .eyebrow { margin: 0 0 .4rem; color: #a25b17; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; font-size: .9rem; }
+    .galeria-cabecera h2 { margin: 0 0 .5rem; color: #102b4e; font-size: clamp(2rem, 4.5vw, 3rem); }
+    .galeria-cabecera > p:last-child { margin: 0; color: #4d576b; }
+    .galeria-grid { max-width: 1040px; margin: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; align-items: stretch; }
+    .galeria-grid figure { min-width: 0; margin: 0; overflow: hidden; border-radius: 12px; background: #fff; box-shadow: 0 10px 28px rgba(16,43,78,.14); }
+    .galeria-grid img { display: block; width: 100%; height: 210px; object-fit: cover; }
+    .galeria-grid figcaption { padding: .8rem .9rem; color: #102b4e; font-size: 1rem; line-height: 1.4; font-weight: 600; }
+    @media (max-width: 900px) { .galeria-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 520px) { .galeria-grid { grid-template-columns: 1fr; } .galeria-grid img { height: 240px; } }
+  </style>
 </head>
 <body>
 
